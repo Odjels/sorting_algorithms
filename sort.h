@@ -36,4 +36,5 @@ void lom_sort(int *array, size_t size, int left, int right);
 void swap_nd_front(listint_t **list, listint_t **tail, listint_t **shak);
 void swap_nd_back(listint_t **list, listint_t **tail, listint_t **shak);
 void cocktail_sort_list(listint_t **list);
+void swapin_node(listint_t **h, listint_t **n1, listint_t *n2)
 #endif 
