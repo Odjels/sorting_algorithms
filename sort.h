@@ -2,6 +2,7 @@
 #define SORT_H
 
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -17,24 +18,34 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-
-void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+void print_array(const int *array, size_t size);
+
+/* main sorting function */
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
-void swap(listint_t *, listint_t *, listint_t **);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
-void lomuto_qsort(int *array, int lo, int hi, size_t size);
-int partition(int *array, int lo, int hi, size_t size);
 void shell_sort(int *array, size_t size);
-
-
-void swaping_ints(int *a, int *b);
-int lom_partition(int *array, size_t size, int left, int right);
-void lom_sort(int *array, size_t size, int left, int right);
-void swap_nd_front(listint_t **list, listint_t **tail, listint_t **shak);
-void swap_nd_back(listint_t **list, listint_t **tail, listint_t **shak);
 void cocktail_sort_list(listint_t **list);
-void swapin_node(listint_t **h, listint_t **n1, listint_t *n2)
-#endif 
+void quick_sort_hoare(int *array, size_t size);
+void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+
+/* helper functions */
+void qs(int *arr, int low, int high, size_t size);
+int partition(int *arr, int low, int high, size_t size);
+listint_t *swap_nodes(listint_t *n, listint_t *b, listint_t *head);
+void qsh(int *array, int low, int high, size_t size);
+int partitionh(int *arr, int low, int high, size_t size);
+void swap(int *array, int i, int j, size_t size);
+int get_biggest_num(int *array, size_t size);
+void fill_array(int *arra, int *arrb, size_t size);
+
+void topdownmergesort(int *A, int *B, int n);
+void splitmerge(int *array, int *array_c, size_t size, size_t l, size_t r);
+void topdownmerge(int *array, int *array_c, size_t l, size_t m, size_t r);
+void copyarray(int *A, int iBegin, int iEnd, int *B);
+
+
+#endif
